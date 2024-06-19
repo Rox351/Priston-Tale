@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilha de Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Planilha de Shop</h1>
+        <label for="valor1kZN">Valor 1k de ZN em KK's:</label>
+        <input type="number" id="valor1kZN" value="17.000" oninput="calcular()">
+        <h2>Total: <span id="totalGeral">0</span> KK's</h2>
+        <label for="filtro">Buscar Item:</label>
+        <input type="text" id="filtro" oninput="filtrar()">
+        <table>
+            <thead >
+                <tr>
+                    <th>Item</th>
+                    <th>Valor Und/ ZN</th>
+                    <th>Quantidade</th>
+                    <th>Valor em KK's</th>
+                    <th>Valor Final em KK's</th>
+                    <th>Total em ZN</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaItens">
+                <tr>
+                    <td>DRENA ALMAS (1D)</td>
+                    <td><input type="number" value="360" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>DRENA ALMAS (3H)</td>
+                    <td><input type="number" value="180" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>OLHO MÁGICO (1D)			</td>
+                    <td><input type="number" value="400" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>OLHO MÁGICO (7D)			
+                    </td>
+                    <td><input type="number" value="800" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>PRESA VAMPÍRICA (1D)			
+                    </td>
+                    <td><input type="number" value="360" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>PRESA VAMPÍRICA (3H)			
+                    </td>
+                    <td><input type="number" value="180" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>HP BOOSTER (1H)			
+                    </td>
+                    <td><input type="number" value="640" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>HP BOOSTER (3H)			
+                    </td>
+                    <td><input type="number" value="1280" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>MP BOOSTER (1H)			
+                    </td>
+                    <td><input type="number" value="640" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>MP BOOSTER (3H)			
+                    </td>
+                    <td><input type="number" value="1280" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>RES BOOSTER (1H)			
+                        </td>
+                    <td><input type="number" value="640" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>RES BOOSTER (3H)			
+                        </td>
+                    <td><input type="number" value="1280" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>POÇÃO DE XP +120% (3H)			
+                    </td>
+                    <td><input type="number" value="2480" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>PERGAMINHO DA RESSURREIÇÃO			
+                    </td>
+                    <td><input type="number" value="70" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>POÇÃO REDUTORA DE MANA (1H)			
+                    </td>
+                    <td><input type="number" value="160" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>POÇÃO REDUTORA DE MANA (3H)			
+                    </td>
+                    <td><input type="number" value="310" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>POÇÃO REDUTORA DE MANA (1D)			                    </td>
+                    <td><input type="number" value="680" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>POÇÃO REDUTORA DE MANA (7D)			
+                        </td>
+                    <td><input type="number" value="4550" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>POÇÃO REDUTORA DE RES (1H)			
+                        </td>
+                    <td><input type="number" value="160" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>POÇÃO REDUTORA DE RES (3H)			
+                    </td>
+                    <td><input type="number" value="310" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>POÇÃO REDUTORA DE RES (1D)			
+                        </td>
+                    <td><input type="number" value="680" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>POÇÃO REDUTORA DE RES (7D)			
+                    </td>
+                    <td><input type="number" value="4550" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>SUPER PEDRA DA GRAVIDADE (30D)			
+                    </td>
+                    <td><input type="number" value="3800" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>ASA DE BABEL (TIER 1)			
+                    </td>
+                    <td><input type="number" value="260" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>ASA DE BABEL (TIER 2)			
+                    </td>
+                    <td><input type="number" value="400" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>ASA DE BABEL (TIER 3)			
+                    </td>
+                    <td><input type="number" value="1000" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>ASA DE BABEL (TIER 4)			
+                    </td>
+                    <td><input type="number" value="1500" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>BAÚ D (7D)			
+                    </td>
+                    <td><input type="number" value="1260" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>BAÚ D (30D)			
+                    </td>
+                    <td><input type="number" value="3780" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>ANEL ELIOT (14D)			
+                    </td>
+                    <td><input type="number" value="5000" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>AMULETO ELIOT (14D)			
+                    </td>
+                    <td><input type="number" value="7500" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>ANEL SILRAPE (1D)			
+                    </td>
+                    <td><input type="number" value="500" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>AMULETO SILRAPE (1D)			
+                    </td>
+                    <td><input type="number" value="500" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>AMULETO DO SELAMENTO (7D)			
+                    </td>
+                    <td><input type="number" value="3500" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>ANEL DO SELAMENTO (7D)			
+                    </td>
+                    <td><input type="number" value="3500" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>TRAJE (1D)			
+                    </td>
+                    <td><input type="number" value="490" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>TRAJE (7D)			
+                    </td>
+                    <td><input type="number" value="2900" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>TRAJE (30D)			
+                    </td>
+                    <td><input type="number" value="9280" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>MUT (1D)			
+                    </td>
+                    <td><input type="number" value="1000" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>EOR (1D)			
+                    </td>
+                    <td><input type="number" value="1000" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>TERRY (1D)			
+                    </td>
+                    <td><input type="number" value="1000" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>NEPSYS (1D)			
+                    </td>
+                    <td><input type="number" value="1000" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>MUT (30D)			
+                    </td>
+                    <td><input type="number" value="14900" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>EOR (30D)			
+                    </td>
+                    <td><input type="number" value="14900" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>TERRY (30D)			
+                    </td>
+                    <td><input type="number" value="14900" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>NEPSYS (30D)			
+                    </td>
+                    <td><input type="number" value="14900" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>FÊNIX (3H)			
+                    </td>
+                    <td><input type="number" value="450" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>FÊNIX (1D)			
+                    </td>
+                    <td><input type="number" value="910" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>FÊNIX (7D)			
+                    </td>
+                    <td><input type="number" value="4550" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>FÊNIX (30D)			
+                    </td>
+                    <td><input type="number" value="13650" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>FÊNIX SUPREMA (3H)			
+                    </td>
+                    <td><input type="number" value="810" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>FÊNIX SUPREMA (1D)			
+                    </td>
+                    <td><input type="number" value="1680" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>CHAVE DO ESQUECIMENTO			
+                    </td>
+                    <td><input type="number" value="6200" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>SERVIÇO PREMIUM (15D)			
+                    </td>
+                    <td><input type="number" value="35480" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>SERVIÇO PREMIUM (30D)			
+                    </td>
+                    <td><input type="number" value="68240" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>PEDRA AZUL			
+                    </td>
+                    <td><input type="number" value="1100" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>PEDRA VERDE			
+                    </td>
+                    <td><input type="number" value="1700" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>PEDRA DA VIDA			
+                    </td>
+                    <td><input type="number" value="250" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>PEDRA DA FORÇA			
+                    </td>
+                    <td><input type="number" value="300" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>PEDRA VERMELHA			
+                    </td>
+                    <td><input type="number" value="900" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>PEDRA DO TALENTO			
+                    </td>
+                    <td><input type="number" value="275" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>PEDRA DA AGILIDADE			
+                    </td>
+                    <td><input type="number" value="250" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>PEDRA DA ESPIRITUALIDADE			
+                    </td>
+                    <td><input type="number" value="250" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>BROCA			
+                    </td>
+                    <td><input type="number" value="1950" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>FERRO DE SOLDA (1)			
+                    </td>
+                    <td><input type="number" value="1250" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>FERRO DE SOLDA (2)			
+                    </td>
+                    <td><input type="number" value="1750" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>COMPOSTO DE SELAMENTO			
+                    </td>
+                    <td><input type="number" value="1240" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>KIT DE FERRAMENTAS (1)			
+                    </td>
+                    <td><input type="number" value="1250" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+                <tr>
+                    <td>KIT DE FERRAMENTAS (2)			
+                    </td>
+                    <td><input type="number" value="1750" class="valorZN" oninput="calcular()"></td>
+                    <td><input type="number" value="0" class="quantidade" oninput="calcular()"></td>
+                    <td><span class="valorKK"></span></td>
+                    <td><span class="valorFinalKK"></span></td>
+                    <td><span class="totalZN"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

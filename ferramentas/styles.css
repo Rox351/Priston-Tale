@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.container {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #fff;
+    gap: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+#valor1kZN {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Certifique-se de que o cabeçalho esteja acima das linhas da tabela */
+}
+
+tbody {
+    /* display: block;
+    overflow-y: scroll; */
+}
+
+thead th {
+
+    position: sticky;
+    top: 0;
+    z-index: 2; /* Certifique-se de que o cabeçalho esteja acima das linhas da tabela *
+
+}
+
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+span {
+    display: inline-block;
+    min-width: 60px; /* Ajuste conforme necessário */
+    text-align: right;
+}
